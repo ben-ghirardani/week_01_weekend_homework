@@ -65,7 +65,7 @@ total_pets_owned = []
   p total_pets_owned.count
 end
 
-
+  
 def add_pet_to_customer(customer, new_pet)
   customer[:pets] << new_pet
 end
