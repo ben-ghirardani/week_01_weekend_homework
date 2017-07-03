@@ -65,19 +65,9 @@ total_pets_owned = []
   p total_pets_owned.count
 end
 
-# I'm trying to add @new_pet into the array for "Craig" [:pets], then perform the same function as the excersise above to count number of pets. 
-# Question: once I've declared "for customer in customers", each of the hashes in @customers is now called "customer" for the purposes of this function. How do I differentiate between the two? How do I specify that I want @new_pet to go into the array for Craig and not Zsolt?
-def add_pet_to_customer(customers, new_pet)
-total_pets_owned = []
-  for customer in customers do
-    if customer[:name] == "Craig"
-      customer[:pets] << @new_pet
-    end
-  end
-  for customer in customers[:pets] do
-      total_pets_owned << customer[:pets]
-  end
-    p total_pets_owned.count
+
+def add_pet_to_customer(customer, new_pet)
+  customer[:pets] << new_pet
 end
 
 
