@@ -48,3 +48,36 @@ def remove_pet_by_name(pet_shop, pet_name)
     end
   end  
 end
+
+def add_pet_to_stock(pet_shop, new_pet)
+# if I change the return statement to "p" my output to the console is "...7", the test passes but I'm not sure why I'm seeing the full stops there.
+@pet_shop[:pets] << @new_pet
+return @pet_shop[:pets].count
+end
+
+
+
+def customer_pet_count(customers)
+total_pets_owned = []
+  for customer in customers[:pets] do
+    total_pets_owned << customer[:pets]
+  end
+  p total_pets_owned.count
+end
+
+# I'm trying to add @new_pet into the array for "Craig" [:pets], then perform the same function as the excersise above to count number of pets. 
+# Question: once I've declared "for customer in customers", each of the hashes in @customers is now called "customer" for the purposes of this function. How do I differentiate between the two? How do I specify that I want @new_pet to go into the array for Craig and not Zsolt?
+def add_pet_to_customer(customers, new_pet)
+total_pets_owned = []
+  for customer in customers do
+    if customer[:name] == "Craig"
+      customer[:pets] << @new_pet
+    end
+  end
+  for customer in customers[:pets] do
+      total_pets_owned << customer[:pets]
+  end
+    p total_pets_owned.count
+end
+
+
